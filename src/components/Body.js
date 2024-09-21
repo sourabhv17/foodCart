@@ -7,6 +7,7 @@ const Body = () => {
   }, []);
 
   const [listOfRes, setListOfRes] = useState([]);
+  // const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
   const fetchData = async () => {
     const data = await fetch(
@@ -21,10 +22,27 @@ const Body = () => {
   };
 
   return (
-    <div className="restaraunt">
-      {listOfRes?.map((restaraunt) => (
-        <RestarauntCard key={restaraunt.info.id} restarauntData={restaraunt} />
-      ))}
+    <div className="restaurant">
+      <div className="top-restaurants">
+        <button
+          onClick={() => {
+            const filteredRestaurant = listOfRes?.filter(
+              (res) => res?.info?.avgRating > 4
+            );
+            setListOfRes(filteredRestaurant);
+          }}
+        >
+          Top rated restaurants
+        </button>
+      </div>
+      <div className="restaurants-display">
+        {listOfRes?.map((restaraunt) => (
+          <RestarauntCard
+            key={restaraunt.info.id}
+            restarauntData={restaraunt}
+          />
+        ))}
+      </div>
     </div>
   );
 };
