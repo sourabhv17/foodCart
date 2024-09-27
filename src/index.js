@@ -21,13 +21,29 @@ import { AboutUs } from "./components/AboutUs";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import ErrorPage from "./utils/ErrorPage";
 import { Outlet } from "react-router-dom";
+import userContext from "./utils/userContext";
+import { useState, useEffect } from "react";
+import LogPage from "./components/LogPage";
+import RestaurantMenu from "./components/RestaurantMenu";
 
 const App = () => {
+  const [user, setUser] = useState([]);
+
+  useEffect(() => {
+    const data = {
+      name: "Virat Kohli",
+      // password: "18@vk",
+    };
+    setUser(data.name);
+  }, []);
+
   return (
-    <div className="app">
-      <Header />
-      <Outlet />
-    </div>
+    <userContext.Provider value={{ loggedInUser: user, setUser }}>
+      <div className="app">
+        <Header />
+        <Outlet />
+      </div>
+    </userContext.Provider>
   );
 };
 
@@ -44,6 +60,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/about",
         element: <AboutUs />,
+      },
+      {
+        path: "/log",
+        element: <LogPage />,
+      },
+      {
+        path: "/restaurant",
+        element: <RestaurantMenu />,
       },
     ],
   },

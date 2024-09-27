@@ -1,6 +1,9 @@
-
+import userContext from "../utils/userContext";
+import { useContext } from "react";
 
 export const AboutUs = () => {
+  const { loggedInUser } = useContext(userContext);
+
   return (
     <div>
       <h1>About us</h1>
@@ -27,6 +30,12 @@ export const AboutUs = () => {
         enjoy them fresh and hot. Exceptional Service: Our dedicated customer
         support team is here to ensure that every aspect of your Food
       </h3>
+
+      <h2>Founder</h2>
+      <h3>Name: Sourabh Mahajan</h3>
+      <h3>Contacts: 7665504207</h3>
+      <h3>Email: sourabh.umarvaishya@gmail.com</h3>
+      <h2>Welcome to Foodie {loggedInUser} </h2>
     </div>
   );
 };

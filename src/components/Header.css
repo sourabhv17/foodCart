@@ -19,7 +19,13 @@
 .header-items {
   display: flex;
   align-items: center;
+
   margin: 2.5rem;
+}
+
+.linked {
+  text-decoration: none;
+  color: black;
 }
 
 .header-items > span {
@@ -34,4 +40,9 @@
   border-radius: 0.25rem;
   color: white;
   background-color: black;
+}
+
+.log-linked {
+  color: white;
+  text-decoration: none;
 }
