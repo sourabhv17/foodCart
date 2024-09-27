@@ -1,0 +1,37 @@
+.nav-outer {
+  /* height: 5%; */
+  background-color: white;
+  border-bottom: 2px solid rgb(157, 153, 153);
+  border-radius: 0.25rem;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+}
+
+.header-logo {
+  height: 5.9rem;
+  border-radius: 0.25rem;
+  margin-top: 0.15rem;
+  cursor: pointer;
+}
+
+.header-items {
+  display: flex;
+  align-items: center;
+  margin: 2.5rem;
+}
+
+.header-items > span {
+  font-size: large;
+  cursor: pointer;
+  margin-left: 3.125rem;
+}
+
+.log-btn {
+  border: 0.125rem solid black;
+  padding: 0.1875rem;
+  border-radius: 0.25rem;
+  color: white;
+  background-color: black;
+}

@@ -1,3 +1,5 @@
+import "./Restauant.css";
+
 import { RESTARAUNT_IMG } from "../utils/links";
 
 const RestarauntCard = ({ restarauntData }) => {
@@ -11,7 +13,7 @@ const RestarauntCard = ({ restarauntData }) => {
         ></img>
 
         <h3>{name}</h3>
-        <h4>{cuisines}</h4>
+        <h4>{cuisines.join(", ")}</h4>
         <h4>Rating: {avgRating}</h4>
       </div>
     </div>

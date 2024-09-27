@@ -1,0 +1,51 @@
+.restaurant {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+  text-align: center;
+  justify-content: center;
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.top-restaurants {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.top > button {
+  border: 0.125rem solid black;
+  border-radius: 0.3rem;
+  padding: 0.1875rem;
+  color: white;
+  background-color: black;
+  font-size: small;
+  cursor: pointer;
+  margin-right: 7rem;
+}
+
+.searchBox > input {
+  margin-left: 6rem;
+  border-radius: 0.2rem;
+  cursor: auto;
+}
+
+.searchBox > button {
+  margin-left: 0.5rem;
+  color: white;
+  background-color: black;
+  border-radius: 0.25rem;
+  padding: 0.07rem 0.5rem;
+  cursor: pointer;
+}
+
+.restaurants-display {
+  margin-top: 0.5rem;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}

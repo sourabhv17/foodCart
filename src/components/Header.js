@@ -1,8 +1,13 @@
+import "./Header.css";
 import { LOGO_IMG } from "../utils/links";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Header = () => {
+  const [log, setLog] = useState("Log-in");
+
   return (
     <div className="nav-outer">
       <div>
@@ -11,16 +16,21 @@ const Header = () => {
 
       <div className="header-items">
         <span>
-          <b>home</b>
+          <Link to="/">home</Link>
         </span>
         <span>
-          <b>about us</b>
+          <Link to="/about">about us</Link>
         </span>
         <span>
           <FontAwesomeIcon icon={faCartShopping} />
         </span>
-        <span className="log-btn">
-          <b>log in</b>
+        <span
+          className="log-btn"
+          onClick={() =>
+            log == "Log-in" ? setLog("Log-out") : setLog("Log-in")
+          }
+        >
+          <b>{log}</b>
         </span>
       </div>
     </div>

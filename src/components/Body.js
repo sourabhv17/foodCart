@@ -1,5 +1,7 @@
+import "./Body.css";
 import { useEffect, useState } from "react";
 import RestarauntCard from "./RestarauntCard";
+import { Shimmer } from "./Shimmer";
 
 const Body = () => {
   useEffect(() => {
@@ -7,7 +9,8 @@ const Body = () => {
   }, []);
 
   const [listOfRes, setListOfRes] = useState([]);
-  // const [filteredRestaurant, setFilteredRestaurant] = useState([]);
+  const [searchedComp, setSearchedComp] = useState("");
+  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
   const fetchData = async () => {
     const data = await fetch(
@@ -19,24 +22,56 @@ const Body = () => {
     setListOfRes(
       json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
     );
+
+    setFilteredRestaurant(
+      json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+    );
   };
+
+  const handleOnSubmit = () => {
+    const filteredRestaurant = listOfRes.filter((restaurant) =>
+      restaurant.info.name.toLowerCase().includes(searchedComp.toLowerCase())
+    );
+
+    setFilteredRestaurant(filteredRestaurant);
+  };
+
+  if (listOfRes.length == 0) {
+    return <Shimmer />;
+  }
+
+  const handleSubmit = (e) => setSearchedComp(e.target.value);
 
   return (
     <div className="restaurant">
       <div className="top-restaurants">
-        <button
-          onClick={() => {
-            const filteredRestaurant = listOfRes?.filter(
-              (res) => res?.info?.avgRating > 4
-            );
-            setListOfRes(filteredRestaurant);
-          }}
-        >
-          Top rated restaurants
-        </button>
+        <div className="top">
+          <button
+            onClick={() => {
+              const filteredList = listOfRes?.filter(
+                (res) => res?.info?.avgRating > 4
+              );
+              setListOfRes(filteredList);
+            }}
+          >
+            Top rated restaurants
+          </button>
+        </div>
+        <div className="searchBox">
+          <input
+            type="search"
+            maxLength={50}
+            size={50}
+            placeholder=" search for restaurants, cuisines, dishes and more..."
+            onChange={handleSubmit}
+          />
+          <button type="submit" onClick={handleOnSubmit}>
+            Search
+          </button>
+        </div>
       </div>
       <div className="restaurants-display">
-        {listOfRes?.map((restaraunt) => (
+        {filteredRestaurant?.map((restaraunt) => (
           <RestarauntCard
             key={restaraunt.info.id}
             restarauntData={restaraunt}
