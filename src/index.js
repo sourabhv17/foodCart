@@ -66,7 +66,7 @@ const appRouter = createBrowserRouter([
         element: <LogPage />,
       },
       {
-        path: "/restaurant",
+        path: "/restaurant/:Id",
         element: <RestaurantMenu />,
       },
     ],

@@ -1,0 +1,22 @@
+.accordion {
+  cursor: pointer;
+  margin: 1.56rem 25rem;
+  border-bottom: 2px solid gray;
+  background-color: #f0f8ff;
+  cursor: pointer;
+  border-radius: 0.3rem;
+}
+
+.accordion-head {
+  display: flex;
+  justify-content: space-between;
+  height: 3.5rem;
+  font-weight: 700;
+  align-items: center;
+  padding: 0rem 0.4rem;
+}
+
+.down-arrow {
+  width: 100%;
+  height: 1.125rem;
+}
