@@ -1,9 +1,11 @@
-import "./Restauant.css";
-
+import "./RestaurantCard.css";
+import { useState } from "react";
 import { RESTARAUNT_IMG } from "../utils/links";
+import { Link } from "react-router-dom";
 
 const RestarauntCard = ({ restarauntData }) => {
   const { name, cuisines, avgRating, cloudinaryImageId } = restarauntData?.info;
+
   return (
     <div className="restaraunt-container">
       <div className="restaraunt-card">

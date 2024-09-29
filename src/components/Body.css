@@ -17,11 +17,12 @@
 }
 
 .top > button {
-  border: 0.125rem solid black;
+  height: 1.5rem;
+  border: 0.125rem solid rgb(248, 243, 243);
   border-radius: 0.3rem;
   padding: 0.1875rem;
-  color: white;
-  background-color: black;
+  color: rgb(33, 32, 32);
+  background-color: rgb(210, 204, 204);
   font-size: small;
   cursor: pointer;
   margin-right: 7rem;
@@ -35,8 +36,10 @@
 
 .searchBox > button {
   margin-left: 0.5rem;
-  color: white;
-  background-color: black;
+  border: 0.125rem solid rgb(248, 243, 243);
+  height: 1.5rem;
+  color: rgb(33, 32, 32);
+  background-color: rgb(210, 204, 204);
   border-radius: 0.25rem;
   padding: 0.07rem 0.5rem;
   cursor: pointer;
@@ -48,4 +51,9 @@
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
 }

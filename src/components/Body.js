@@ -2,6 +2,7 @@ import "./Body.css";
 import { useEffect, useState } from "react";
 import RestarauntCard from "./RestarauntCard";
 import { Shimmer } from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   useEffect(() => {
@@ -36,11 +37,11 @@ const Body = () => {
     setFilteredRestaurant(filteredRestaurant);
   };
 
+  const handleSubmit = (e) => setSearchedComp(e.target.value);
+
   if (listOfRes.length == 0) {
     return <Shimmer />;
   }
-
-  const handleSubmit = (e) => setSearchedComp(e.target.value);
 
   return (
     <div className="restaurant">
@@ -72,10 +73,12 @@ const Body = () => {
       </div>
       <div className="restaurants-display">
         {filteredRestaurant?.map((restaraunt) => (
-          <RestarauntCard
-            key={restaraunt.info.id}
-            restarauntData={restaraunt}
-          />
+          <Link className="link" to={"/restaurant/" + restaraunt.info.id}>
+            <RestarauntCard
+              key={restaraunt.info.id}
+              restarauntData={restaraunt}
+            />
+          </Link>
         ))}
       </div>
     </div>

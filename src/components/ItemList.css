@@ -1,0 +1,38 @@
+.items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+.item-name {
+  font-weight: 600;
+  line-height: 1.5rem;
+}
+
+.item-description {
+  padding-bottom: 0.25rem;
+  opacity: 0.9;
+}
+
+.item-price {
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+.item-list2 {
+  height: 100%;
+  padding-right: 0.325rem;
+  padding-top: 0.925rem;
+}
+
+.item-img {
+  padding-top: 0.5rem;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 1rem;
+}

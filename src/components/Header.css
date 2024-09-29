@@ -1,12 +1,13 @@
 .nav-outer {
   /* height: 5%; */
-  background-color: white;
   border-bottom: 2px solid rgb(157, 153, 153);
   border-radius: 0.25rem;
   display: flex;
   justify-content: space-between;
   position: sticky;
+  background-color: white;
   top: 0;
+  z-index: 10;
 }
 
 .header-logo {

@@ -1,5 +1,5 @@
 .restaraunt-card {
-  border: 2px solid grey;
+  border: 1px solid rgb(233, 227, 227);
   margin: 0.5rem;
   overflow: hidden;
   /* background-color: rgb(241, 228, 211); */
@@ -7,13 +7,17 @@
   cursor: pointer;
   width: 22rem;
   height: 22rem;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   padding: 0.5rem;
+}
+
+.restaraunt-card:hover {
+  border: 1px solid rgb(218, 208, 208);
 }
 
 .restaraunt-img {
   padding-top: 0.5rem;
   height: 60%;
   width: 90%;
-  border-radius: 1rem;
+  border-radius: 0.9rem;
 }

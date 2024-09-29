@@ -1,17 +1,33 @@
 import "./RestaurantCategory.css";
+import ItemList from "./ItemList";
+import { useState } from "react";
+import { DOWN_ARROW } from "../utils/links";
+import { UP_ARROW } from "../utils/links";
 
 const RestaurantCategory = ({ data }) => {
+  const [isActive, setIsActive] = useState(false);
+
   return (
-    <div className="accordion">
+    <div className="accordion" onClick={() => setIsActive(!isActive)}>
       <div className="accordion-head">
         <span>{data.title}</span>
         <span>
-          <img
-            src="https://static.vecteezy.com/system/resources/previews/006/827/566/non_2x/down-arrow-icon-sign-symbol-logo-vector.jpg"
-            className="down-arrow"
-          ></img>
+          {isActive ? (
+            <img src={UP_ARROW} className="down-arrow" />
+          ) : (
+            <img src={DOWN_ARROW} className="down-arrow" />
+          )}
         </span>
       </div>
+      {isActive && (
+        <div className="accordion-list">
+          <span>
+            {data.itemCards.map((c) => (
+              <ItemList key={c?.card?.info?.id} itemData={c?.card?.info} />
+            ))}
+          </span>
+        </div>
+      )}
     </div>
   );
 };
