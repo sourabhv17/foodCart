@@ -47,3 +47,17 @@
   color: white;
   text-decoration: none;
 }
+
+.logged-in-user {
+  font-weight: 700;
+}
+
+.cart {
+  text-decoration: none;
+  color: black;
+}
+
+.cart-length {
+  color: black;
+  text-decoration: none;
+}

@@ -1,0 +1,26 @@
+.cart-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cart-items {
+  margin-top: 1rem;
+  width: 50%;
+}
+
+.clear-cart {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  background-color: black;
+  color: white;
+  height: 1.45rem;
+  width: 5rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: 0.4rem;
+  font: bold;
+  font-weight: 500;
+  cursor: pointer;
+}

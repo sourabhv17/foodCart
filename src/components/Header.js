@@ -6,10 +6,13 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import userContext from "../utils/userContext";
 import { useContext } from "react";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [log, setLog] = useState("Log-in");
   const { loggedInUser } = useContext(userContext);
+
+  const cartLength = useSelector((store) => store.cart.items);
 
   return (
     <div className="nav-outer">
@@ -32,7 +35,10 @@ const Header = () => {
           </Link>
         </span>
         <span>
-          <FontAwesomeIcon icon={faCartShopping} />
+          <Link to="/cart">
+            <FontAwesomeIcon icon={faCartShopping} className="cart" />
+            <span className="cart-length"> {cartLength.length}</span>
+          </Link>
         </span>
         <span
           className="log-btn"
@@ -44,7 +50,7 @@ const Header = () => {
             <b>{log}</b>
           </Link>
         </span>
-        <span>{loggedInUser}</span>
+        <span className="logged-in-user">{loggedInUser}</span>
       </div>
     </div>
   );

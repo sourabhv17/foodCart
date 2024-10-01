@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import RestarauntCard from "./RestarauntCard";
 import { Shimmer } from "./Shimmer";
 import { Link } from "react-router-dom";
+import useRestaurantData from "../utils/useRestaurantData";
 
 const Body = () => {
   useEffect(() => {
@@ -52,6 +53,7 @@ const Body = () => {
               const filteredList = listOfRes?.filter(
                 (res) => res?.info?.avgRating > 4
               );
+              // setListOfRes(filteredList);
               setListOfRes(filteredList);
             }}
           >

@@ -8,8 +8,8 @@ const RestaurantCategory = ({ data }) => {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    <div className="accordion" onClick={() => setIsActive(!isActive)}>
-      <div className="accordion-head">
+    <div className="accordion">
+      <div className="accordion-head" onClick={() => setIsActive(!isActive)}>
         <span>{data.title}</span>
         <span>
           {isActive ? (
@@ -21,11 +21,7 @@ const RestaurantCategory = ({ data }) => {
       </div>
       {isActive && (
         <div className="accordion-list">
-          <span>
-            {data.itemCards.map((c) => (
-              <ItemList key={c?.card?.info?.id} itemData={c?.card?.info} />
-            ))}
-          </span>
+          <span>{<ItemList items={data.itemCards} />}</span>
         </div>
       )}
     </div>

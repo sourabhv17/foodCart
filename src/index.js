@@ -25,6 +25,9 @@ import userContext from "./utils/userContext";
 import { useState, useEffect } from "react";
 import LogPage from "./components/LogPage";
 import RestaurantMenu from "./components/RestaurantMenu";
+import { Provider } from "react-redux";
+import appStore from "./toolkit/appStore";
+import RestaurantCart from "./components/RestaurantCart";
 
 const App = () => {
   const [user, setUser] = useState([]);
@@ -38,12 +41,14 @@ const App = () => {
   }, []);
 
   return (
-    <userContext.Provider value={{ loggedInUser: user, setUser }}>
-      <div className="app">
-        <Header />
-        <Outlet />
-      </div>
-    </userContext.Provider>
+    <Provider store={appStore}>
+      <userContext.Provider value={{ loggedInUser: user, setUser }}>
+        <div className="app">
+          <Header />
+          <Outlet />
+        </div>
+      </userContext.Provider>
+    </Provider>
   );
 };
 
@@ -68,6 +73,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurant/:Id",
         element: <RestaurantMenu />,
+      },
+      {
+        path: "/cart",
+        element: <RestaurantCart />,
       },
     ],
   },
