@@ -1,14 +1,15 @@
 import userContext from "../utils/userContext";
 import { useContext } from "react";
+import "./AboutUs.css";
 
 export const AboutUs = () => {
   const { loggedInUser } = useContext(userContext);
 
   return (
-    <div>
+    <div className="about-div">
       <h1>About us</h1>
       <h3>
-        Welcome to Foodie, where we bring the flavors of your favorite
+        Welcome to Foodgy, where we bring the flavors of your favorite
         restaurants right to your doorstep. We're more than just a food delivery
         app – we're your trusted partner in satisfying cravings, exploring new
         tastes, and making mealtime moments memorable. Our Mission At Foodie,
@@ -32,10 +33,10 @@ export const AboutUs = () => {
       </h3>
 
       <h2>Founder</h2>
-      <h3>Name: Sourabh Mahajan</h3>
+      <h3>Name: Sourabh Umarvaishya</h3>
       <h3>Contacts: 7665504207</h3>
       <h3>Email: sourabh.umarvaishya@gmail.com</h3>
-      <h2>Welcome to Foodie {loggedInUser} </h2>
+      <h2>Welcome to Foodgy, {loggedInUser} </h2>
     </div>
   );
 };

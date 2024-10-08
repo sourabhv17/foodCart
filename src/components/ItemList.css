@@ -25,6 +25,8 @@
 }
 
 .item-list2 {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   padding-right: 0.325rem;
   padding-top: 0.925rem;
@@ -43,6 +45,29 @@
   color: white;
   width: 3rem;
   height: 1.325rem;
-  margin-left: 0.8rem;
+  margin-right: 2rem;
+  margin-left: 1rem;
+  margin-top: 0.7rem;
   cursor: pointer;
+}
+
+@media (min-width:300px){
+  .item-img{
+    height: 7rem;
+
+  }
+}
+
+@media (min-width:450px){
+  .item-img{
+    height: 5rem;
+  }
+
+ 
+}
+
+@media (max-width:600px){
+  .item-description{
+    display: none;
+  }
 }

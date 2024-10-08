@@ -25,12 +25,12 @@ const Header = () => {
 
       <div className="header-items">
         <span>
-          <Link to="/" className="linked">
+          <Link to="/" className="linked home">
             home
           </Link>
         </span>
         <span>
-          <Link to="/about" className="linked">
+          <Link to="/about" className="linked about">
             about us
           </Link>
         </span>

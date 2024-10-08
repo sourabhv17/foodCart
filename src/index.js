@@ -1,18 +1,3 @@
-// import React from "react";
-// import ReactDOM from "react-dom/client";
-// import "./index.css";
-// import App from "./App";
-// import { BrowserRouter } from "react-router-dom";
-
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(
-//   <React.StrictMode>
-//     <BrowserRouter>
-//       <App />
-//     </BrowserRouter>
-//   </React.StrictMode>
-// );
-
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
@@ -34,8 +19,7 @@ const App = () => {
 
   useEffect(() => {
     const data = {
-      name: "Virat Kohli",
-      // password: "18@vk",
+      name: "",
     };
     setUser(data.name);
   }, []);
@@ -88,5 +72,3 @@ root.render(
     <RouterProvider router={appRouter} />
   </React.StrictMode>
 );
-
-// export default App;

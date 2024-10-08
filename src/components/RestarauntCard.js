@@ -14,9 +14,9 @@ const RestarauntCard = ({ restarauntData }) => {
           className="restaraunt-img"
         ></img>
 
-        <h3>{name}</h3>
-        <h4>{cuisines.join(", ")}</h4>
-        <h4>Rating: {avgRating}</h4>
+        <h5>{name}</h5>
+        <h6 className="cuisines">{cuisines.join(", ")}</h6>
+        <h6 className="rating">Rating: {avgRating}</h6>
       </div>
     </div>
   );
