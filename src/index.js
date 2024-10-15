@@ -15,7 +15,7 @@ import appStore from "./toolkit/appStore";
 import RestaurantCart from "./components/RestaurantCart";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import Footer from "./components/Footer";
 const App = () => {
   const [user, setUser] = useState([]);
 
@@ -33,6 +33,7 @@ const App = () => {
           <ToastContainer />
           <Header />
           <Outlet />
+          <Footer />
         </div>
       </userContext.Provider>
     </Provider>

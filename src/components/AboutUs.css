@@ -1,6 +1,95 @@
 .about-div{
   background: linear-gradient(white, rgb(205, 109, 40));
   height: 83vh;
-  width: 96vw;
   padding: 1rem;
+}
+
+.inner-content{
+  margin-top: 1rem;
+font-weight: 550;
+font-size: larger;
+line-height: 1.7rem;}
+
+.founder,.name, .email,.contacts{
+  font-weight: 600;
+  font-size: large;
+  line-height: 1.7rem;
+  margin-top: 1rem;
+}
+
+.welcome{
+  font-size: x-large;
+    font-weight: 700;
+    line-height: 1.7rem;
+    margin-top: 1rem;
+
+}
+
+@media (max-width:1080px){
+  .inner-content {
+      font-size: medium;
+      line-height: 1.4rem;
+    }
+  
+    .founder,
+    .name,
+    .email,
+    .contacts {
+      font-size: medium;
+      line-height: 1.4rem;
+    }
+  
+    .welcome {
+      font-size: larger;
+      line-height: 1.4rem;
+      margin-top: 1rem;
+  
+    }
+}
+
+@media (max-width:820px){
+  .inner-content {
+      font-size: small;
+      line-height: 1.2rem;
+    }
+}
+
+@media (max-width:550px){
+  .founder,
+    .name,
+    .email,
+    .contacts {
+      font-size: small;
+  margin-top: 0.5rem;
+      line-height: 1.1rem;
+    }
+  
+    .welcome {
+      font-size: medium;
+      line-height: 1.1rem;
+      margin-top: 0.5rem;
+  
+    }
+}
+
+@media (max-width:470px){
+  .founder,
+    .name,
+    .email,
+    .contacts {
+      font-size: small;
+      margin-top: 0.2rem;
+      line-height: 0.7rem;
+    }
+  
+    .welcome {
+      font-size: medium;
+      line-height: 0.7rem;
+      margin-top: 0.5rem;
+  
+    }
+        .inner-content {
+          font-size: small;
+          line-height: 0.9rem;
+        }
 }

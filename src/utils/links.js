@@ -12,3 +12,9 @@ export const DOWN_ARROW =
 
 export const UP_ARROW =
   "https://img.favpng.com/3/18/18/arrow-computer-icons-symbol-png-favpng-SA6bsDN5faXYuqngvAxymMcjr.jpg";
+
+export const PLAY_STORE =
+  "https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png";
+
+export const APP_STORE =
+  "https://1000logos.net/wp-content/uploads/2020/08/apple-app-store-logo.jpg";
