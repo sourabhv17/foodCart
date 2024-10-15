@@ -13,6 +13,8 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import { Provider } from "react-redux";
 import appStore from "./toolkit/appStore";
 import RestaurantCart from "./components/RestaurantCart";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   const [user, setUser] = useState([]);
@@ -28,6 +30,7 @@ const App = () => {
     <Provider store={appStore}>
       <userContext.Provider value={{ loggedInUser: user, setUser }}>
         <div className="app">
+          <ToastContainer />
           <Header />
           <Outlet />
         </div>

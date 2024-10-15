@@ -1,7 +1,7 @@
 import "./ItemList.css";
 import { MENU_ITEM_IMG } from "../utils/links";
 import { useDispatch } from "react-redux";
-import { addItem } from "../toolkit/cartSlice";
+import { addItem, removeItem } from "../toolkit/cartSlice";
 
 const ItemList = ({ items }) => {
   const dispatch = useDispatch();
@@ -9,6 +9,9 @@ const ItemList = ({ items }) => {
     dispatch(addItem(item));
   };
 
+  // const handleRemoveItem = (item) => {
+  //   dispatch(removeItem(item));
+  // };
   // const { name, description, price, defaultPrice, imageId } = itemData;
 
   return (
@@ -33,7 +36,7 @@ const ItemList = ({ items }) => {
               className="item-img"
             ></img>
             <button className="add-button" onClick={() => handleAddItem(item)}>
-              +Add
+              +Add{item.cartQuantity}
             </button>
           </div>
         </div>
